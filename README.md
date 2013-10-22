@@ -15,7 +15,7 @@ need to generate another parser to handle that particular ABNF grammar.
 The system has been made Quicklisp ready.
 
     $ cd ~/quicklisp/local-projects/
-	$ git clone git://git.tapoueh.org/pgloader.git
+	$ git clone https://github.com/dimitri/cl-abnf.git
 	* (ql:quickload "abnf")
 
 Currently the ABNF system is maintained as part of the `pgloader` tool as a
