@@ -1,11 +1,10 @@
 # ABNF DEFINITION OF ABNF
 
 This Common Lisp librairie implements a parser generator for the ABNF
-grammar format as described in [http://tools.ietf.org/html/rfc2234](RFC
-2234).
+grammar format as described in [RFC2234](http://tools.ietf.org/html/rfc2234).
 
 The generated parser is a regular expression scanner provided by the
-[http://weitz.de/cl-ppcre/](cl-ppcre) lib, which means that we can't parse
+[cl-ppcre](http://weitz.de/cl-ppcre/) lib, which means that we can't parse
 recursive grammar definition. One such definition is the ABNF definition as
 given by the RFC. Fortunately, as you have this lib, you most probably don't
 need to generate another parser to handle that particular ABNF grammar.
