@@ -173,6 +173,13 @@ rules of the ABNF definition.
                                ; 8 bits of data
 
         SP             =  %x20
+	                       ; space
+
+        VCHAR          =  %x21-7E
+                               ; visible (printing) characters
+
+        WSP            =  SP / HTAB
+                               ; white space
 
 ### Regex Support
 
