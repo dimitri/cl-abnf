@@ -519,7 +519,8 @@ This table comes from http://tools.ietf.org/html/rfc2234#page-11 and 12.
 
 	   (destructuring-bind (rule-name rule-definition)
 	       (or (assoc definition rule-set)
-		   (assoc definition *abnf-default-rules*))
+		   (assoc definition *abnf-default-rules*)
+		   (error "Unknown rule: ~S" definition))
 	     (let* ((already-expanded-rules
 		     (cons definition already-expanded-rules))
 
