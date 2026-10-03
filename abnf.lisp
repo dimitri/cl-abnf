@@ -410,7 +410,7 @@ This table comes from http://tools.ietf.org/html/rfc2234#page-11 and 12.
     (destructuring-bind (repeat element) repetition
 	(if repeat
 	    (destructuring-bind (min . max) repeat
-	      `(:non-greedy-repetition ,min ,max ,element))
+	      `(:greedy-repetition ,min ,max ,element))
 	    ;; no repeat clause
 	    element))))
 
@@ -455,7 +455,7 @@ This table comes from http://tools.ietf.org/html/rfc2234#page-11 and 12.
   (:lambda (option)
     (destructuring-bind (open ws1 a ws2 close) option
       (declare (ignore open close ws1 ws2))
-      `(:non-greedy-repetition 0 1 ,a))))
+      `(:greedy-repetition 0 1 ,a))))
 
 (defrule toplevel-element (or group option element))
 
@@ -506,6 +506,7 @@ This table comes from http://tools.ietf.org/html/rfc2234#page-11 and 12.
 			      :regex
 			      :char-class
 			      :range
+			      :greedy-repetition
 			      :non-greedy-repetition))
 	 ;; that's a cl-ppcre scanner parse-tree symbol
 	 ;; only put in that list those cl-ppcre symbols we actually produce
