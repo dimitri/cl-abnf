@@ -315,6 +315,8 @@ This table comes from http://tools.ietf.org/html/rfc2234#page-11 and 12.
     (destructuring-bind (first rest) string
       `(:sequence ,first ,@(mapcar #'cadr rest)))))
 
+(defrule range-sep "-" (:constant :range-sep))
+
 (defrule hex-range (and hexdigits range-sep hexdigits)
   (:lambda (range)
     (destructuring-bind (min sep max) range
